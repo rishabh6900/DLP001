@@ -25,7 +25,7 @@ https://github.com/rishabh6900/DLP001
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n cnncls python=3.8 -y
+conda create -n BT python=3.8 -y
 ```
 
 ```bash
