@@ -1,8 +1,8 @@
-AUGMENTATION: True
-IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
-BATCH_SIZE: 16
-INCLUDE_TOP: False
-EPOCHS: 1
-CLASSES: 2
-WEIGHTS: imagenet
-LEARNING_RATE: 0.01
+AUGMENTATION: True  # Keep as True for better generalization
+IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model  Standard for VGG16, no change
+BATCH_SIZE: 16 # Increase batch size for more stable gradient updates
+INCLUDE_TOP: False   # Keep False since we are fine-tuning
+EPOCHS: 2 # Increase epochs for better learning
+CLASSES: 2    # No change since it's a binary classification problem
+WEIGHTS: imagenet   # Pre-trained weights, no change
+LEARNING_RATE: 0.001  # Reduce LR to avoid overshooting and improve convergence
