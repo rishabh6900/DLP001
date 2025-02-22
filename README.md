@@ -37,3 +37,21 @@ conda activate BT
 ```bash
 pip install -r requirements.txt
 ```
+
+
+### dagshub
+[dagshub](https://dagshub.com/)
+import dagshub
+dagshub.init(repo_owner='rishabh6900', repo_name='DLP001', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
+
+Run this to export as env variables:
+
+```bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/rishabh6900/DLP001.mlflow
+export MLFLOW_TRACKING_USERNAME=rishabh6900
+export MLFLOW_TRACKING_PASSWORD=4bcf9bdf86a4863b89822ffd8ed5b9ddcd8b46f2 
