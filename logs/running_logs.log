@@ -789,3 +789,119 @@ x==========x]
 [2025-02-27 11:59:15,575: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-02-28 12:44:42,149: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-02-28 12:44:42,153: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-28 12:44:42,157: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-28 12:44:42,157: INFO: common: created directory at: artifacts]
+[2025-02-28 12:44:42,157: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-02-28 12:44:42,157: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-02-28 12:45:08,417: ERROR: main: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 463, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\http\client.py", line 1348, in getresponse
+    response.begin()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\http\client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\http\client.py", line 285, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\util\retry.py", line 552, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\urllib3\connectionpool.py", line 463, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\http\client.py", line 1348, in getresponse
+    response.begin()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\http\client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\http\client.py", line 285, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 11, in <module>
+    obj.main()
+  File "C:\Users\rajna\OneDrive\Desktop\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "C:\Users\rajna\OneDrive\Desktop\DLP001\src\cnnClassifier\components\data_ingestion.py", line 30, in download_file
+    raise e
+  File "C:\Users\rajna\OneDrive\Desktop\DLP001\src\cnnClassifier\components\data_ingestion.py", line 25, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\gdown\download.py", line 202, in download
+    res = sess.get(url, stream=True, verify=verify)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\sessions.py", line 724, in send
+    history = [resp for resp in gen]
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\sessions.py", line 724, in <listcomp>
+    history = [resp for resp in gen]
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\sessions.py", line 265, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2025-02-28 12:46:15,385: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-02-28 12:46:15,388: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-28 12:46:15,391: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-28 12:46:15,391: INFO: common: created directory at: artifacts]
+[2025-02-28 12:46:15,392: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-02-28 12:46:15,392: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-02-28 12:47:06,851: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-02-28 12:47:12,412: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-02-28 12:47:12,413: INFO: main: *******************]
+[2025-02-28 12:47:12,413: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-02-28 12:47:12,417: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-28 12:47:12,421: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-28 12:47:12,423: INFO: common: created directory at: artifacts]
+[2025-02-28 12:47:12,424: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-02-28 12:47:13,089: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-02-28 12:47:13,416: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-02-28 12:47:13,416: INFO: main: *******************]
+[2025-02-28 12:47:13,417: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-02-28 12:47:13,419: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-28 12:47:13,422: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-28 12:47:13,423: INFO: common: created directory at: artifacts]
+[2025-02-28 12:47:13,424: INFO: common: created directory at: artifacts\training]
+[2025-02-28 13:42:51,573: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-02-28 13:42:51,578: INFO: main: *******************]
+[2025-02-28 13:42:51,580: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-02-28 13:42:51,596: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-02-28 13:42:51,605: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-28 13:42:51,609: INFO: common: created directory at: artifacts]
+[2025-02-28 13:49:34,779: INFO: common: json file saved at: scores.json]
+[2025-02-28 13:49:34,782: INFO: common: json file saved at: scores.json]
+[2025-02-28 13:49:34,783: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
