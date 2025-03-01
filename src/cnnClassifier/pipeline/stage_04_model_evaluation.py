@@ -18,8 +18,8 @@ class EvaluationPipeline:
         evaluation.evaluation()
         evaluation.save_score()
         # evaluation.log_into_mlflow()
-        mlflow.set_tracking_uri(eval_config.mlflow_uri)
-        evaluation.log_into_mlflow()
+        # mlflow.set_tracking_uri(eval_config.mlflow_uri)
+        # evaluation.log_into_mlflow()
 
 
 
