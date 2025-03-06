@@ -950,3 +950,594 @@ x==========x]
 [2025-03-01 17:22:45,142: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-03-04 19:11:39,215: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-04 19:11:39,238: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-04 19:11:39,259: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-04 19:11:39,260: INFO: common: created directory at: artifacts]
+[2025-03-04 19:11:39,263: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-04 19:11:39,264: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-04 19:14:00,321: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-04 19:14:15,914: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-04 19:14:15,915: INFO: main: *******************]
+[2025-03-04 19:14:15,917: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-04 19:14:15,927: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-04 19:14:15,935: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-04 19:14:15,937: INFO: common: created directory at: artifacts]
+[2025-03-04 19:14:15,953: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-04 19:14:17,441: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-04 19:14:17,997: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-04 19:14:17,998: INFO: main: *******************]
+[2025-03-04 19:14:17,998: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-04 19:14:18,005: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-04 19:14:18,011: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-04 19:14:18,012: INFO: common: created directory at: artifacts]
+[2025-03-04 19:14:18,014: INFO: common: created directory at: artifacts\training]
+[2025-03-04 19:54:38,062: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-03-04 19:54:38,064: INFO: main: *******************]
+[2025-03-04 19:54:38,064: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-03-04 19:54:38,071: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-04 19:54:38,077: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-04 19:54:38,079: INFO: common: created directory at: artifacts]
+[2025-03-04 19:58:23,166: INFO: common: json file saved at: scores.json]
+[2025-03-04 19:58:23,168: INFO: common: json file saved at: scores.json]
+[2025-03-04 19:58:23,169: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2025-03-05 11:03:02,747: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 11:03:02,747: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 11:03:20,647: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 11:03:20] "GET / HTTP/1.1" 200 -]
+[2025-03-05 11:04:28,403: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 37, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 11:04:28,416: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 11:04:28] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 11:09:26,935: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 11:09:26,935: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 11:09:42,113: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 11:09:42] "GET / HTTP/1.1" 200 -]
+[2025-03-05 11:10:04,970: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 46, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 11:10:04,978: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 11:10:04] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 11:19:00,139: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 11:19:00,140: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 11:19:13,977: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 11:19:13] "GET / HTTP/1.1" 200 -]
+[2025-03-05 11:19:48,740: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 47, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 11:19:48,748: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 11:19:48] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 11:23:27,680: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-05 11:23:27,703: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 11:23:27,721: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 11:23:27,724: INFO: common: created directory at: artifacts]
+[2025-03-05 11:23:27,724: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-05 11:23:27,725: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-05 11:24:10,059: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-05 11:24:20,000: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-05 11:24:20,000: INFO: main: *******************]
+[2025-03-05 11:24:20,001: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-05 11:24:20,005: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 11:24:20,008: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 11:24:20,009: INFO: common: created directory at: artifacts]
+[2025-03-05 11:24:20,009: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-05 11:24:20,879: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-05 11:24:21,368: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-05 11:24:21,369: INFO: main: *******************]
+[2025-03-05 11:24:21,370: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-05 11:24:21,374: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 11:24:21,382: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 11:24:21,385: INFO: common: created directory at: artifacts]
+[2025-03-05 11:24:21,386: INFO: common: created directory at: artifacts\training]
+[2025-03-05 12:16:18,163: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-03-05 12:16:18,165: INFO: main: *******************]
+[2025-03-05 12:16:18,165: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-03-05 12:16:18,173: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 12:16:18,176: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 12:16:18,178: INFO: common: created directory at: artifacts]
+[2025-03-05 12:20:54,694: INFO: common: json file saved at: scores.json]
+[2025-03-05 12:20:54,695: INFO: common: json file saved at: scores.json]
+[2025-03-05 12:20:54,696: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2025-03-05 12:21:17,084: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 12:21:17,084: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 12:21:31,252: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:21:31] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:22:22,079: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 47, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 17, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 12:22:22,101: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:22:22] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 12:29:52,173: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 12:29:52,173: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 12:30:07,338: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:30:07] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:30:18,931: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 47, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 17, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 12:30:18,941: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:30:18] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 12:30:38,710: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:30:38] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:35:39,658: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 12:35:39,658: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 12:35:48,513: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:35:48] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:35:59,924: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 50, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 17, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 12:35:59,936: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:35:59] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 12:39:37,528: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 12:39:37,528: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 12:39:51,484: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:39:51] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:40:19,926: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 70, in predictRoute
+    result = clApp.classifier.predict()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\prediction.py", line 17, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2025-03-05 12:40:19,940: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:40:19] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 12:47:51,710: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 12:47:51,711: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 12:48:03,309: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:48:03] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:48:15,644: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:48:15] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 12:50:51,910: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 12:50:51,911: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 12:51:06,862: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:51:06] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:51:19,756: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:51:19] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 12:51:29,499: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:51:29] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:53:18,031: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:53:18] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 12:53:21,040: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:53:21] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 12:53:29,880: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:53:29] "GET / HTTP/1.1" 200 -]
+[2025-03-05 12:53:54,946: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:53:54] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 12:54:33,904: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002074AA81430> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2025-03-05 12:54:33,909: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 12:54:33] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:02:33,903: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 13:02:33,904: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 13:02:53,517: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:02:53] "GET / HTTP/1.1" 200 -]
+[2025-03-05 13:03:20,647: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:03:20] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:23:23,904: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 13:23:23,904: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 13:23:33,810: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:23:33] "GET / HTTP/1.1" 200 -]
+[2025-03-05 13:24:39,398: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:24:39] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:48:30,490: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 13:48:30,490: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 13:48:44,380: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:48:44] "GET / HTTP/1.1" 200 -]
+[2025-03-05 13:48:56,483: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:48:56] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:49:38,642: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:49:38] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:49:56,246: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:49:56] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:50:16,176: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:50:16] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:53:44,815: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 13:53:44,816: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 13:54:10,317: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:54:10] "GET / HTTP/1.1" 200 -]
+[2025-03-05 13:54:21,897: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 13:54:21] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 13:56:23,261: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-05 13:56:23,263: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 13:56:23,284: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 13:56:23,285: INFO: common: created directory at: artifacts]
+[2025-03-05 13:56:23,285: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-05 13:56:23,286: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-05 13:57:09,508: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-yc-08ovk1kmFasZVbpezE4SwxZJU0gu/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-05 13:57:14,152: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-05 13:57:14,152: INFO: main: *******************]
+[2025-03-05 13:57:14,152: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-05 13:57:14,156: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 13:57:14,161: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 13:57:14,162: INFO: common: created directory at: artifacts]
+[2025-03-05 13:57:14,163: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-05 13:57:14,770: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-05 13:57:15,091: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-05 13:57:15,091: INFO: main: *******************]
+[2025-03-05 13:57:15,092: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-05 13:57:15,094: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 13:57:15,096: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 13:57:15,097: INFO: common: created directory at: artifacts]
+[2025-03-05 13:57:15,098: INFO: common: created directory at: artifacts\training]
+[2025-03-05 14:27:06,014: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-03-05 14:27:06,015: INFO: main: *******************]
+[2025-03-05 14:27:06,015: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-03-05 14:27:06,021: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-05 14:27:06,024: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-05 14:27:06,026: INFO: common: created directory at: artifacts]
+[2025-03-05 14:30:40,659: INFO: common: json file saved at: scores.json]
+[2025-03-05 14:30:40,661: INFO: common: json file saved at: scores.json]
+[2025-03-05 14:30:40,661: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2025-03-05 14:31:13,446: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 14:31:13,448: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 14:31:27,303: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 14:31:27] "GET / HTTP/1.1" 200 -]
+[2025-03-05 14:31:41,329: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 14:31:41] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 14:32:18,975: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 14:32:18] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 14:32:28,579: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 14:32:28] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 14:32:31,310: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 14:32:31] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 14:32:47,196: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000018963995670> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2025-03-05 14:32:47,200: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 14:32:47] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:25:39,103: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 16:25:39,104: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 16:25:50,400: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:25:50] "GET / HTTP/1.1" 200 -]
+[2025-03-05 16:26:24,306: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:26:24] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:26:30,059: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:26:30] "GET / HTTP/1.1" 200 -]
+[2025-03-05 16:26:47,072: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:26:47] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:27:04,495: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:27:04] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:42:01,036: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 16:42:01,037: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 16:42:13,679: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:42:13] "GET / HTTP/1.1" 200 -]
+[2025-03-05 16:42:45,939: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:42:45] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:43:27,834: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:43:27] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:43:40,562: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:43:40] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:43:50,883: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:43:50] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:44:17,046: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001E9C3BA31F0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2025-03-05 16:44:17,056: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:44:17] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:44:31,581: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001E9C3BA35E0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2025-03-05 16:44:31,592: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 16:44:31] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 16:59:54,992: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 16:59:54,993: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 17:00:07,017: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:00:07] "GET / HTTP/1.1" 200 -]
+[2025-03-05 17:00:07,248: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:00:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-03-05 17:00:20,280: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:00:20] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 17:00:25,878: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:00:25] "GET / HTTP/1.1" 200 -]
+[2025-03-05 17:00:39,726: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:00:39] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 17:05:28,760: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 17:05:28,760: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 17:06:45,964: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-05 17:06:45,964: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 17:07:10,865: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:07:10] "GET / HTTP/1.1" 200 -]
+[2025-03-05 17:07:11,115: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:07:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-03-05 17:07:31,133: INFO: _internal: 192.168.29.252 - - [05/Mar/2025 17:07:31] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 18:09:13,798: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 18:09:13,799: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 18:09:28,586: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 18:09:28] "GET / HTTP/1.1" 200 -]
+[2025-03-05 18:09:29,721: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 18:09:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-03-05 18:09:47,685: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 18:09:47] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:06:21,302: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 22:06:21,303: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 22:06:37,892: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:06:37] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:06:38,225: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:06:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-03-05 22:09:17,349: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:09:17] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:14:39,647: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:14:39] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:14:50,409: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:14:50] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:15:01,771: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:15:01] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:15:12,663: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001E4003781F0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2025-03-05 22:15:12,673: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:15:12] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:17:05,286: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001E4003785E0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2025-03-05 22:17:05,296: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:17:05] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:17:59,744: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:17:59] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:18:53,124: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:18:53] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:19:51,366: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:19:51] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:22:10,902: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:22:10] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:23:15,327: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:23:15] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:24:54,646: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:24:54] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:25:22,825: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:25:22] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:31:40,181: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:31:40] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:31:49,654: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:31:49] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:32:06,557: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:32:06] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:33:04,359: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:33:04] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:33:32,729: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 22:33:32,729: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 22:33:36,531: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:33:36] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:33:46,240: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 54, in predictRoute
+    return jsonify(result)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\provider.py", line 215, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\provider.py", line 180, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\provider.py", line 120, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type set is not JSON serializable
+[2025-03-05 22:33:46,268: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:33:46] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 22:34:14,537: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:34:14] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:34:20,420: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 54, in predictRoute
+    return jsonify(result)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\provider.py", line 215, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\provider.py", line 180, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\flask\json\provider.py", line 120, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type set is not JSON serializable
+[2025-03-05 22:34:20,422: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:34:20] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2025-03-05 22:34:44,345: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 22:34:44,346: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 22:34:47,998: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:34:47] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:34:57,339: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:34:57] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:35:07,144: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:35:07] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:35:14,575: INFO: _internal: 192.168.131.130 - - [05/Mar/2025 22:35:14] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:36:02,896: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 22:36:02,896: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 22:36:14,523: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:36:14] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:36:15,006: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:36:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-03-05 22:36:21,353: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:36:21] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:39:23,764: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 22:39:23,765: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 22:39:27,588: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:39:27] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:39:36,286: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:39:36] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:40:16,546: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.131.130:8080]
+[2025-03-05 22:40:16,546: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-05 22:40:20,617: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:40:20] "GET / HTTP/1.1" 200 -]
+[2025-03-05 22:40:27,963: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:40:27] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:40:38,868: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:40:38] "POST /predict HTTP/1.1" 200 -]
+[2025-03-05 22:40:47,910: INFO: _internal: 127.0.0.1 - - [05/Mar/2025 22:40:47] "POST /predict HTTP/1.1" 200 -]
