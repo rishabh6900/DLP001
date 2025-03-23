@@ -1708,3 +1708,13 @@ x==========x]
 [2025-03-06 11:09:15,416: INFO: _internal: 192.168.29.252 - - [06/Mar/2025 11:09:15] "POST /predict HTTP/1.1" 200 -]
 [2025-03-06 11:09:28,833: INFO: _internal: 192.168.29.252 - - [06/Mar/2025 11:09:28] "POST /predict HTTP/1.1" 200 -]
 [2025-03-06 11:09:31,797: INFO: _internal: 192.168.29.252 - - [06/Mar/2025 11:09:31] "POST /predict HTTP/1.1" 200 -]
+[2025-03-23 16:18:01,495: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.252:8080]
+[2025-03-23 16:18:01,525: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-03-23 16:18:05,862: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:05] "GET / HTTP/1.1" 200 -]
+[2025-03-23 16:18:06,169: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-03-23 16:18:13,690: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:13] "POST /predict HTTP/1.1" 200 -]
+[2025-03-23 16:18:25,359: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:25] "POST /predict HTTP/1.1" 200 -]
+[2025-03-23 16:18:36,610: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:36] "POST /predict HTTP/1.1" 200 -]

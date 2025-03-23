@@ -1,42 +1,3 @@
-# import numpy as np
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.preprocessing import image
-# import os
-# # model_path = os.path.join(os.getcwd(), "artifacts", "training", "model.h5")  # Ensure correct absolute path
-# # model = load_model(model_path)
-
-
-# class PredictionPipeline:
-#     def __init__(self,filename):
-#         self.filename =filename
-
-
-    
-#     def predict(self):
-#         # load model
-#         model = load_model(os.path.join("artifacts", "training", "model.h5"))
-
-#         imagename = self.filename
-#         test_image = image.load_img(imagename, target_size = (224,224))
-#         test_image = image.img_to_array(test_image)
-#         test_image = np.expand_dims(test_image, axis = 0)
-#         result = np.argmax(model.predict(test_image), axis=1)
-#         print(result)
-
-#         if result[0] == 1:
-#             prediction = 'Tumor'
-#             return [{ "image" : prediction}]
-#         else:
-#             prediction = 'Normal'
-#             return [{ "image" : prediction}]
-        
-
-
-
-
-
-
-
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -75,3 +36,38 @@ class PredictionPipeline:
             return [{"image": "Tumor"}]
         else:
             return [{"image": "NoTumor"}]
+
+
+
+# import numpy as np
+# from tensorflow.keras.models import load_model
+# from tensorflow.keras.preprocessing import image
+# import os
+# # model_path = os.path.join(os.getcwd(), "artifacts", "training", "model.h5")  # Ensure correct absolute path
+# # model = load_model(model_path)
+
+
+# class PredictionPipeline:
+#     def __init__(self,filename):
+#         self.filename =filename
+
+
+    
+#     def predict(self):
+#         # load model
+#         model = load_model(os.path.join("artifacts", "training", "model.h5"))
+
+#         imagename = self.filename
+#         test_image = image.load_img(imagename, target_size = (224,224))
+#         test_image = image.img_to_array(test_image)
+#         test_image = np.expand_dims(test_image, axis = 0)
+#         result = np.argmax(model.predict(test_image), axis=1)
+#         print(result)
+
+#         if result[0] == 1:
+#             prediction = 'Tumor'
+#             return [{ "image" : prediction}]
+#         else:
+#             prediction = 'Normal'
+#             return [{ "image" : prediction}]
+        
