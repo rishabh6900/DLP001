@@ -1718,3 +1718,326 @@ x==========x]
 [2025-03-23 16:18:13,690: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:13] "POST /predict HTTP/1.1" 200 -]
 [2025-03-23 16:18:25,359: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:25] "POST /predict HTTP/1.1" 200 -]
 [2025-03-23 16:18:36,610: INFO: _internal: 127.0.0.1 - - [23/Mar/2025 16:18:36] "POST /predict HTTP/1.1" 200 -]
+[2025-03-30 15:29:46,060: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 15:29:46,075: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 15:29:46,081: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 15:29:46,082: INFO: common: created directory at: artifacts]
+[2025-03-30 15:29:46,083: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-30 15:29:46,083: ERROR: main: "'ConfigBox' object has no attribute 'source_url'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'source_URL'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'source_URL'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'source_URL'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'source_URL'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 593, in box.box.Box.__getitem__
+KeyError: 'source_url'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 632, in box.box.Box.__getattr__
+  File "box\\box.py", line 620, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'source_url'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 634, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'source_url'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "main.py", line 10, in <module>
+    obj = DataIngestionTrainingPipeline()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 14, in __init__
+    self.data_ingestion_config = self.config.get_data_ingestion_config()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\config\configuration.py", line 26, in get_data_ingestion_config
+    source_URL=config.source_URL,
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 648, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'source_url'"
+[2025-03-30 15:37:21,107: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 15:37:21,129: ERROR: main: while scanning a simple key
+  in "config\config.yaml", line 18, column 3
+could not find expected ':'
+  in "config\config.yaml", line 19, column 3]
+Traceback (most recent call last):
+  File "main.py", line 10, in <module>
+    obj = DataIngestionTrainingPipeline()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 13, in __init__
+    self.config = ConfigurationManager()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\config\configuration.py", line 12, in __init__
+    self.config = read_yaml(config_filepath)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\utils\common.py", line 37, in read_yaml
+    raise e
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\utils\common.py", line 31, in read_yaml
+    content = yaml.safe_load(yaml_file)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\scanner.py", line 162, in fetch_more_tokens
+    self.stale_possible_simple_keys()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\scanner.py", line 291, in stale_possible_simple_keys
+    raise ScannerError("while scanning a simple key", key.mark,
+yaml.scanner.ScannerError: while scanning a simple key
+  in "config\config.yaml", line 18, column 3
+could not find expected ':'
+  in "config\config.yaml", line 19, column 3
+[2025-03-30 15:38:53,373: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 15:38:53,390: ERROR: main: while scanning a simple key
+  in "config\config.yaml", line 18, column 3
+could not find expected ':'
+  in "config\config.yaml", line 19, column 3]
+Traceback (most recent call last):
+  File "main.py", line 10, in <module>
+    obj = DataIngestionTrainingPipeline()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 13, in __init__
+    self.config = ConfigurationManager()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\config\configuration.py", line 12, in __init__
+    self.config = read_yaml(config_filepath)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\utils\common.py", line 37, in read_yaml
+    raise e
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\utils\common.py", line 31, in read_yaml
+    content = yaml.safe_load(yaml_file)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\scanner.py", line 162, in fetch_more_tokens
+    self.stale_possible_simple_keys()
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\yaml\scanner.py", line 291, in stale_possible_simple_keys
+    raise ScannerError("while scanning a simple key", key.mark,
+yaml.scanner.ScannerError: while scanning a simple key
+  in "config\config.yaml", line 18, column 3
+could not find expected ':'
+  in "config\config.yaml", line 19, column 3
+[2025-03-30 15:43:47,760: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 15:43:47,778: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 15:43:47,781: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 15:43:47,782: INFO: common: created directory at: artifacts]
+[2025-03-30 15:43:47,782: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-30 15:43:47,783: INFO: stage_01_data_ingestion: Downloading dataset from KaggleHub...]
+[2025-03-30 15:44:36,745: INFO: stage_01_data_ingestion: Dataset successfully moved to: artifacts/data_ingestion]
+[2025-03-30 15:44:39,611: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-30 15:44:39,611: INFO: main: *******************]
+[2025-03-30 15:44:39,612: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-30 15:44:39,614: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 15:44:39,616: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 15:44:39,616: INFO: common: created directory at: artifacts]
+[2025-03-30 15:44:39,617: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-30 15:44:40,148: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-30 15:44:40,445: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-30 15:44:40,446: INFO: main: *******************]
+[2025-03-30 15:44:40,446: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-30 15:44:40,451: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 15:44:40,453: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 15:44:40,454: INFO: common: created directory at: artifacts]
+[2025-03-30 15:44:40,455: INFO: common: created directory at: artifacts\training]
+[2025-03-30 15:46:23,093: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 15:46:23,096: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 15:46:23,098: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 15:46:23,098: INFO: common: created directory at: artifacts]
+[2025-03-30 15:46:23,099: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-30 15:46:23,099: INFO: stage_01_data_ingestion: Downloading dataset from KaggleHub...]
+[2025-03-30 15:46:23,609: INFO: stage_01_data_ingestion: Dataset successfully moved to: artifacts/data_ingestion]
+[2025-03-30 15:46:23,610: ERROR: stage_01_data_ingestion: Error in Data Ingestion Stage]
+Traceback (most recent call last):
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 50, in main
+    data_ingestion.extract_zip_file()  # Only extracting the files now
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\components\data_ingestion.py", line 42, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\zipfile.py", line 1253, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip'
+[2025-03-30 15:46:23,617: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip']
+Traceback (most recent call last):
+  File "main.py", line 11, in <module>
+    obj.main()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 53, in main
+    raise e
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 50, in main
+    data_ingestion.extract_zip_file()  # Only extracting the files now
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\components\data_ingestion.py", line 42, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\zipfile.py", line 1253, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip'
+[2025-03-30 15:46:53,145: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 15:46:53,149: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 15:46:53,152: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 15:46:53,153: INFO: common: created directory at: artifacts]
+[2025-03-30 15:46:53,154: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-30 15:46:53,154: INFO: stage_01_data_ingestion: Downloading dataset from KaggleHub...]
+[2025-03-30 15:46:53,729: INFO: stage_01_data_ingestion: Dataset successfully moved to: artifacts/data_ingestion]
+[2025-03-30 15:46:53,730: ERROR: stage_01_data_ingestion: Error in Data Ingestion Stage]
+Traceback (most recent call last):
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 50, in main
+    data_ingestion.extract_zip_file()  # Only extracting the files now
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\components\data_ingestion.py", line 42, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\zipfile.py", line 1253, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip'
+[2025-03-30 15:46:53,732: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip']
+Traceback (most recent call last):
+  File "main.py", line 11, in <module>
+    obj.main()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 53, in main
+    raise e
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 50, in main
+    data_ingestion.extract_zip_file()  # Only extracting the files now
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\components\data_ingestion.py", line 42, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\zipfile.py", line 1253, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip'
+[2025-03-30 16:14:38,293: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 16:14:38,312: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 16:14:38,314: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 16:14:38,315: INFO: common: created directory at: artifacts]
+[2025-03-30 16:14:38,315: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-30 16:14:38,315: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/15RbhExrARCAE7CzaSl4rFt7Iz1SSEENy/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-30 16:15:20,408: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/15RbhExrARCAE7CzaSl4rFt7Iz1SSEENy/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-30 16:15:25,412: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-30 16:15:25,412: INFO: main: *******************]
+[2025-03-30 16:15:25,413: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-30 16:15:25,416: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 16:15:25,418: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 16:15:25,419: INFO: common: created directory at: artifacts]
+[2025-03-30 16:15:25,420: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-30 16:15:25,893: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-30 16:15:26,129: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-30 16:15:26,130: INFO: main: *******************]
+[2025-03-30 16:15:26,130: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-30 16:15:26,133: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 16:15:26,135: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 16:15:26,136: INFO: common: created directory at: artifacts]
+[2025-03-30 16:15:26,137: INFO: common: created directory at: artifacts\training]
+[2025-03-30 16:15:26,497: ERROR: main: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\Brain-Tumor']
+Traceback (most recent call last):
+  File "main.py", line 36, in <module>
+    model_trainer.main()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\pipeline\stage_03_model_training.py", line 20, in main
+    training.train_valid_generator()
+  File "C:\Users\rajna\OneDrive\Desktop\DL\DLP001\src\cnnClassifier\components\model_training.py", line 38, in train_valid_generator
+    self.valid_generator = valid_datagenerator.flow_from_directory(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\preprocessing\image.py", line 1648, in flow_from_directory
+    return DirectoryIterator(
+  File "C:\Users\rajna\anaconda3\envs\BT\lib\site-packages\keras\preprocessing\image.py", line 563, in __init__
+    for subdir in sorted(os.listdir(directory)):
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\Brain-Tumor'
+[2025-03-30 16:20:10,141: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-30 16:20:10,158: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 16:20:10,160: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 16:20:10,161: INFO: common: created directory at: artifacts]
+[2025-03-30 16:20:10,165: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-30 16:20:10,167: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1dP-uiVhN4tlOmNhz17kR2HiYXtezbY94/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-30 16:20:55,125: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1dP-uiVhN4tlOmNhz17kR2HiYXtezbY94/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-30 16:20:59,894: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-30 16:20:59,895: INFO: main: *******************]
+[2025-03-30 16:20:59,895: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-30 16:20:59,897: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 16:20:59,899: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 16:20:59,900: INFO: common: created directory at: artifacts]
+[2025-03-30 16:20:59,900: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-30 16:21:00,323: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-30 16:21:00,546: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-30 16:21:00,546: INFO: main: *******************]
+[2025-03-30 16:21:00,547: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-30 16:21:00,550: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 16:21:00,554: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 16:21:00,555: INFO: common: created directory at: artifacts]
+[2025-03-30 16:21:00,555: INFO: common: created directory at: artifacts\training]
+[2025-03-30 17:10:25,550: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-03-30 17:10:25,553: INFO: main: *******************]
+[2025-03-30 17:10:25,553: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-03-30 17:10:25,561: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-30 17:10:25,567: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-30 17:10:25,570: INFO: common: created directory at: artifacts]
+[2025-03-30 17:14:59,449: INFO: common: json file saved at: scores.json]
+[2025-03-30 17:14:59,451: INFO: common: json file saved at: scores.json]
+[2025-03-30 17:14:59,452: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
