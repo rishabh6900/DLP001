@@ -2041,3 +2041,42 @@ x==========x]
 [2025-03-30 17:14:59,452: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-03-31 11:09:37,043: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-03-31 11:09:37,069: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-31 11:09:37,073: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-31 11:09:37,073: INFO: common: created directory at: artifacts]
+[2025-03-31 11:09:37,074: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-03-31 11:09:37,075: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/19SxOTvtAM6gQ8-L1AJCAydHLZO__qcU8/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-31 11:10:40,946: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/19SxOTvtAM6gQ8-L1AJCAydHLZO__qcU8/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-31 11:10:49,779: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-03-31 11:10:49,780: INFO: main: *******************]
+[2025-03-31 11:10:49,781: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2025-03-31 11:10:49,788: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-31 11:10:49,792: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-31 11:10:49,794: INFO: common: created directory at: artifacts]
+[2025-03-31 11:10:49,795: INFO: common: created directory at: artifacts/prepare_base_model]
+[2025-03-31 11:10:50,746: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-03-31 11:10:51,111: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2025-03-31 11:10:51,112: INFO: main: *******************]
+[2025-03-31 11:10:51,112: INFO: main: >>>>>> stage Training started <<<<<<]
+[2025-03-31 11:10:51,115: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-31 11:10:51,119: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-31 11:10:51,120: INFO: common: created directory at: artifacts]
+[2025-03-31 11:10:51,121: INFO: common: created directory at: artifacts\training]
+[2025-03-31 12:03:25,160: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-03-31 12:03:25,162: INFO: main: *******************]
+[2025-03-31 12:03:25,163: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-03-31 12:03:25,171: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-03-31 12:03:25,176: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-03-31 12:03:25,178: INFO: common: created directory at: artifacts]
+[2025-03-31 12:08:44,415: INFO: common: json file saved at: scores.json]
+[2025-03-31 12:08:44,418: INFO: common: json file saved at: scores.json]
+[2025-03-31 12:08:44,418: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]

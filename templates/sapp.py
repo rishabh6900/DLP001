@@ -3,7 +3,7 @@ import numpy as np
 import io
 import os
 from tensorflow.keras.models import load_model  # type: ignore
-from tensorflow.keras.preprocessing import image
+from tensorflow.keras.utils import img_to_array # type: ignore
 from PIL import Image
 
 # Load the trained model
@@ -20,7 +20,7 @@ def predict_image(img):
 
     # Resize and convert to array
     img = img.resize((224, 224))  # Resize to match model input size
-    img_array = image.img_to_array(img)
+    img_array = img_to_array(img)
     img_array = img_array / 255.0  # Normalize pixel values
     img_array = np.expand_dims(img_array, axis=0)  # Expand dims for batch
 
